@@ -1,0 +1,23 @@
+CREATE POD WITH NGINX IMAGE
+
+$ kubectl run nginx --image=nginx --generator=run-pod/v1
+
+Caratteristiche output pod
+$ kubectl get po
+NAME            READY   STATUS         RESTARTS   AGE
+newpods-5jq5l   1/1     Running        0          109s
+newpods-5l6xz   1/1     Running        0          109s
+newpods-w8fkh   1/1     Running        0          109s
+nginx           1/1     Running        0          113s
+webapp          1/2     ErrImagePull   0          17s
+
+1/2 --> container running/container totali
+
+Generate pod yaml
+$ kubectl run redis --image=redis123 --dry-run -o yaml --generator=run-pod/v1 > redis.yaml
+
+Generate deployments yaml
+$ kubectl run redis --image=redis123 --dry-run -o yaml > redis.yaml
+
+Modifica pod
+$ kubectl edit po

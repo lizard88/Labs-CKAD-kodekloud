@@ -1,0 +1,5 @@
+$ kubectl get ns
+
+$ kubectl get po -n research
+
+$ kubectl run redis --image=redis --generator=run-pod/v1 -n finance

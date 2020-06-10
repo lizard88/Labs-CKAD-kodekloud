@@ -1,0 +1,14 @@
+Sono i comandi tramite CLI senza usare gli script kubernetes .yaml
+
+Generazione pod
+$ kubectl run nginx-pod --image=nginx:alpine --generator=run-pod/v1
+
+Generate pod con label
+$ kubectl run redis --image=redis:alpine -l tier=db --generator=run-pod/v1
+
+Expose pod
+$  kubectl expose pod redis --port=6379 --name redis-service
+(senza specificare crea un Type: ClusterIp)
+
+Create deployments
+$ kubectl run webapp --image=kodekloud/webapp-color --replicas=3

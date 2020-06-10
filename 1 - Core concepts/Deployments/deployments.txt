@@ -1,0 +1,6 @@
+Deployments version apps/v1
+king Deployment
+
+Create deployments with replicas
+
+$ kubectl run httpd-frontend --image=httpd:2.4-alpine --replicas=3 --dry-run -o yaml

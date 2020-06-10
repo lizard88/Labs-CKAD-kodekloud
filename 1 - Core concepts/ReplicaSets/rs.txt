@@ -1,0 +1,12 @@
+$ kubectl get rs
+NAME              DESIRED   CURRENT   READY   AGE
+new-replica-set   4         4         0       9s
+
+
+Api version Replica set
+
+apps/v1
+
+Scale replica set
+
+$ kubectl scale replicaset new-replica-set --replicas=5
